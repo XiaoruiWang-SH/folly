@@ -1230,6 +1230,8 @@ if (BUILD_TESTS OR BUILD_BENCHMARKS)
       TEST utf8_string_test SOURCES UTF8StringTest.cpp
       TEST utility_test SOURCES UtilityTest.cpp
       TEST varint_test SOURCES VarintTest.cpp
+      TEST generated_integration_test001 SOURCES generatedIntegrationTest001.cc
+
 
     DIRECTORY test/function_benchmark/
       BENCHMARK function_benchmark
