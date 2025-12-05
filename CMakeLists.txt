@@ -1232,7 +1232,9 @@ if (BUILD_TESTS OR BUILD_BENCHMARKS)
       TEST varint_test SOURCES VarintTest.cpp
       TEST generated_integration_test001 SOURCES generatedIntegrationTest001.cc
       TEST generated_integration_test002 SOURCES generatedIntegrationTest002.cc
-
+      TEST generated_integration_test003 SOURCES generatedIntegrationTest003.cc
+      TEST generated_integration_test004 SOURCES generatedIntegrationTest004.cc
+      TEST generated_integration_test005 SOURCES generatedIntegrationTest005.cc
 
     DIRECTORY test/function_benchmark/
       BENCHMARK function_benchmark
