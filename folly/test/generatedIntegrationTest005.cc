@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
-#include <folly/io/async/AsyncSocket.h>
-#include <folly/net/NetworkSocket.h>
+#include <folly/io/RecordIO.h>
+#include <folly/File.h>
+#include <folly/io/IOBuf.h>
 
 class generatedIntegrationTest005 : public ::testing::Test {
 protected:
@@ -8,11 +9,9 @@ protected:
 };
 
 TEST_F(generatedIntegrationTest005, IntegrationScenario) {
-    folly::NetworkSocket sock(folly::NetworkSocket::invalid_handle_value);
-    int fd = sock.toFd();
-    folly::NetworkSocket sockFromFd = folly::NetworkSocket::fromFd(fd);
-
-    folly::EventBase evb;
-    folly::AsyncSocket::UniquePtr asyncSocket(
-        new folly::AsyncSocket(&evb, sockFromFd));
+    folly::File file("test_recordio_file", O_CREAT | O_RDWR | O_TRUNC, 0644);
+    folly::RecordIOWriter writer(std::move(file), 42);
+    auto buf = folly::IOBuf::copyBuffer("integration test data");
+    writer.write(std::move(buf));
+    writer.filePos();
 }
