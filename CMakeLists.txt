@@ -1235,6 +1235,11 @@ if (BUILD_TESTS OR BUILD_BENCHMARKS)
       TEST generated_integration_test003 SOURCES generatedIntegrationTest003.cc
       TEST generated_integration_test004 SOURCES generatedIntegrationTest004.cc
       TEST generated_integration_test005 SOURCES generatedIntegrationTest005.cc
+      TEST generated_integration_test006 SOURCES generatedIntegrationTest006.cc
+      TEST generated_integration_test007 SOURCES generatedIntegrationTest007.cc
+      TEST generated_integration_test008 SOURCES generatedIntegrationTest008.cc
+      TEST generated_integration_test009 SOURCES generatedIntegrationTest009.cc
+      TEST generated_integration_test010 SOURCES generatedIntegrationTest010.cc
 
     DIRECTORY test/function_benchmark/
       BENCHMARK function_benchmark
